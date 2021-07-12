@@ -21,14 +21,19 @@ const styles = StyleSheet.create({
     },
     Btext: {
         fontSize: 30,
+        flexDirection: 'row',
+        justifyContent: 'center',
         color: "white"
     },
     Stext: {
         fontSize: 20,
+        flexDirection: 'row',
+        justifyContent: 'center',
         color: "white"
     },
     box: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })

@@ -7,6 +7,7 @@ export default function App() {
   const doIt = () => {
     console.log("Hello from console")
   }
+
   return (
     <View style={styles.container}>
       <Weather zipCode="90110" />
