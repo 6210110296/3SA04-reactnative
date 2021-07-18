@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(0,0,0,0.5)",
         color: "white",
         flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
-        width: "100%",
-        height: "30%",
+        width: "70%",
     }
 })
