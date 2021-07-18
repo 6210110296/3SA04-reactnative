@@ -5,7 +5,7 @@ export default function Forecast(props) {
     return (
         <View style={{ color: "white" }} >
             <Text style={styles.Btext}>{props.main}</Text>
-            <Text style={styles.Btext}>{props.description}{props.icon}</Text>
+            <Text style={styles.Btext}>{props.description}</Text>
             <Image source={{ url: image }} style={{ width: 100, height: 100 }} />
             <View style={styles.box}>
                 <Text style={styles.Btext}>Temps : {props.temp}</Text>

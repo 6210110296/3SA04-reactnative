@@ -10,6 +10,7 @@ const availableZipItems = [
     { place: 'Chonburi', code: '20000' },
 ]
 const ZipItem = ({ place, code, navigation }) => (
+
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', { zipCode: code })
     }}>
@@ -23,28 +24,36 @@ const ZipItem = ({ place, code, navigation }) => (
 export default function zipCodeScreen() {
     const navigation = useNavigation()
     return (
-        <FlatList
-            data={availableZipItems}
-            keyExtractor={item => item.code}
-            renderItem={({ item }) => <ZipItem{...item} navigation={navigation} />}
-        />
+        <ImageBackground source={require('../home-bg.jpg')} style={styles.backdrop}>
+            <FlatList
+                data={availableZipItems}
+                keyExtractor={item => item.code}
+                renderItem={({ item }) => <ZipItem{...item} navigation={navigation} />}
+            />
+        </ImageBackground>
     )
 }
 const styles = StyleSheet.create({
     zipItem: {
-        flex: 1,
+        flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-between'
     },
     zipPlace: {
-        padding: '10%',
+        backgroundColor: "rgba(0,0,0,0.5)",
+        padding: '15%',
         flex: 1,
+        color: 'white',
     },
     zipCode: {
-        padding: '10%',
-        flex: 1
+        padding: '15%',
+        flex: 1,
+        color: 'white',
+        backgroundColor: "rgba(0,0,0,0.5)",
     },
-    hatyai: {
-
+    backdrop: {
+        flexDirection: 'row',
+        width: '100%',
+        height: '100%'
     }
 });
