@@ -5,6 +5,7 @@ export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
+        icon: '-',
         temp: 0
     })
     useEffect(() => {
@@ -16,7 +17,8 @@ export default function Weather(props) {
                     setForecastInfo({
                         main: json.weather[0].main,
                         description: json.weather[0].description,
-                        temp: json.main.temp
+                        temp: json.main.temp,
+                        icon: json.weather[0].icon
                     });
                 })
                 .catch((error) => {
@@ -29,6 +31,7 @@ export default function Weather(props) {
             <View style={styles.back}>
                 <Text style={{ color: "white", alignItems: 'center' }}>zipCode : {props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
+
             </View>
         </ImageBackground >
 

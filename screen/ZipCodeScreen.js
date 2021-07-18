@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react';
-import { FlatList, View, Text, StyleSheet } from 'react-native';
+import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -13,7 +13,6 @@ const ZipItem = ({ place, code, navigation }) => (
     <TouchableHighlight onPress={() => {
         navigation.navigate('Weather', { zipCode: code })
     }}>
-
         <View style={styles.zipItem}>
             <Text style={styles.zipPlace}>{place}</Text>
             <Text style={styles.zipCode}>{code}</Text>
@@ -45,4 +44,7 @@ const styles = StyleSheet.create({
         padding: '10%',
         flex: 1
     },
+    hatyai: {
+
+    }
 });

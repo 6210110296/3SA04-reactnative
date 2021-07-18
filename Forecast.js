@@ -1,12 +1,14 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
 import React from 'react';
 export default function Forecast(props) {
+    const image = 'http://openweathermap.org/img/wn/' + props.icon + '.png'
     return (
         <View style={{ color: "white" }} >
             <Text style={styles.Btext}>{props.main}</Text>
-            <Text style={styles.Btext}>{props.description}</Text>
+            <Text style={styles.Btext}>{props.description}{props.icon}</Text>
+            <Image source={{ url: image }} style={{ width: 100, height: 100 }} />
             <View style={styles.box}>
-                <Text style={styles.Btext}>{props.temp}</Text>
+                <Text style={styles.Btext}>Temps : {props.temp}</Text>
                 <Text style={styles.Stext}>°C</Text>
             </View>
         </View >
